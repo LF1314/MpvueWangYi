@@ -12,6 +12,7 @@ export default {
 </script>
 
 <style>
+@import url('../static/fontstyle.css');
 .container {
   height: 100%;
   display: flex;

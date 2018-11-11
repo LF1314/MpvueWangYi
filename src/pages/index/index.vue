@@ -11,14 +11,18 @@
               </block>
             </swiper>    
      </div>    
+     <div class="body_nav">
+       <card></card>
+     </div>
     <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
     <a href="/pages/logs/main" class="counter">查看日志文件</a>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
+import card from '@/components/bodynav'
 import xhr from '../../utils/axios.js'
+
 export default {
   data () {
     return {
@@ -26,12 +30,14 @@ export default {
       imgUrls:[],
       autoplay:true,
       duration:500,
-      interval:2000
+      interval:2000,
+      componentId:""
     }
   },
 
   components: {
     card
+   
   },
 
   methods: {
@@ -39,19 +45,7 @@ export default {
       const url = '../logs/main'
       wx.navigateTo({ url })
     },
-    // getUserInfo () {
-    //   // 调用登录接口
-     
-    //   wx.login({
-    //     success: () => {
-    //       wx.getUserInfo({
-    //         success: (res) => {
-    //           this.userInfo = res.userInfo
-    //         }
-    //       })
-    //     }
-    //   })
-    // },
+   
     clickHandle (msg, ev) {
       console.log('clickHandle:', msg, ev)
     }
@@ -60,11 +54,13 @@ export default {
   created () {
     // 调用应用实例的方法获取全局数据
     // this.getUserInfo()
+    
     xhr.get('/banner').then(res=>{
       console.log(res)
       this.imgUrls = res.banners
     })
   }
+
 }
 </script>
 

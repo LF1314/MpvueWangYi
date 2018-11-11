@@ -2,12 +2,31 @@
   "pages": [
     "pages/index/main",
     "pages/logs/main",
-    "pages/counter/main"
+    "pages/counter/main",
+    "pages/center/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#c40520",
     "navigationBarTitleText": "Music",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color":"#fff",
+    "selectedColor":"red",
+    "backgroundColor":"#ddd",
+    "list": [{
+      "pagePath": "pages/index/main",
+      "text": "首页"
+    }, 
+    {
+      "pagePath": "pages/logs/main",
+      "text": "日志"
+    },
+    {
+      "pagePath": "pages/center/main",
+      "text": "我的"
+    }
+  ]
   }
 }
